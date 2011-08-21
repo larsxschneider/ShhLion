@@ -14,10 +14,10 @@
 /* Begin PBXFileReference section */
 		2F914FE914015E45008E5C9A /* ShhLion.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShhLion.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F914FED14015E45008E5C9A /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = System/Library/Frameworks/Kernel.framework; sourceTree = SDKROOT; };
-		2F914FF014015E45008E5C9A /* ShhLion-Info.plist */ = {isa = PBXFileReference; path = "ShhLion-Info.plist"; sourceTree = "<group>"; };
+		2F914FF014015E45008E5C9A /* ShhLion-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShhLion-Info.plist"; sourceTree = "<group>"; };
 		2F914FF214015E45008E5C9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2F914FF414015E45008E5C9A /* ShhLion.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ShhLion.c; sourceTree = "<group>"; };
-		2F914FF614015E45008E5C9A /* ShhLion-Prefix.pch */ = {isa = PBXFileReference; path = "ShhLion-Prefix.pch"; sourceTree = "<group>"; };
+		2F914FF614015E45008E5C9A /* ShhLion-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShhLion-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,7 +185,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -202,7 +202,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -211,7 +211,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -222,6 +222,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -235,8 +236,8 @@
 				INFOPLIST_FILE = "ShhLion/ShhLion-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.larsxschneider.ShhLion;
-				MODULE_START = ShhLion_start;
-				MODULE_STOP = ShhLion_stop;
+				MODULE_START = shh_lion_start;
+				MODULE_STOP = shh_lion_stop;
 				MODULE_VERSION = 1.0.0d1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = kext;
@@ -252,8 +253,8 @@
 				INFOPLIST_FILE = "ShhLion/ShhLion-Info.plist";
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.larsxschneider.ShhLion;
-				MODULE_START = ShhLion_start;
-				MODULE_STOP = ShhLion_stop;
+				MODULE_START = shh_lion_start;
+				MODULE_STOP = shh_lion_stop;
 				MODULE_VERSION = 1.0.0d1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = kext;
